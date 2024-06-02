@@ -1,11 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task1 </title>
-</head>
-<body>
-    <script src = "task1.js"></script>
-</body>
-</html>
+let Name;
+let phone;
+let mobile;
+let email;
+while (true)
+{
+    let reg = new RegExp("^[a-zA-Z]+$");
+    Name = prompt("enter your name");
+    if (reg.test(Name))
+    {
+        break;
+    }
+    
+}
+while (true)
+{
+    phone = prompt("enter your phone number");
+    let reg = new RegExp("^[0-9]{8}$");
+    if (reg.test(phone))
+    {
+        break;
+    }
+}
+while (true)
+{
+    mobile = prompt("enter your mobile number");
+    let reg = new RegExp("^(010|011|012)[0-9]{8}$");
+    if (reg.test(mobile))
+    {
+        break;
+    }
+}
+while (true)
+{
+    email = prompt("enter your email");
+    let reg = new RegExp("^.+@.+\\.com$");
+    if (reg.test(email))
+    {
+        break;
+    }
+}
+let color = prompt("enter a valid text color ");
+document.write("<p style = 'color:" + color + "'> welcome "  + Name + "</p>");
+
+document.write("<p style = 'color:" + color + "'> your phone number is "  + phone + "</p>");
+document.write("<p style = 'color:" + color + "'> your mobile number is "  + mobile + "</p>");
+
+document.write("<p style = 'color:" + color + "'> your email number is "  + email + "</p>");
