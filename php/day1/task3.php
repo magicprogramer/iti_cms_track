@@ -13,7 +13,7 @@
             echo "Go to Kindergarden,";
             break;
         case $age > 5 && $age <= 12 :
-            echo "Go to grade ".( $age - 5);
+            echo "Go to grade ".( $age - 6);
             break;
     }
     ?>
