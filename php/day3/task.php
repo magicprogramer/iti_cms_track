@@ -92,13 +92,13 @@ if (isset($_POST['submit']) && !empty($_POST["group"]))
 <label for = "details">
     Class details 
 </label>
-<textarea wdith = "20px" height = "100px" name = "details" value = "
+<textarea wdith = "20px" height = "100px" name = "details">
 <?php
 if (isset($_POST['submit']) && !empty($_POST["details"]))
 {
     echo $_POST["details"];
 }
-?>">
+?>
 </textarea><br>
 <label for = "gender">
     Gender 
