@@ -47,38 +47,32 @@ function retrieve_users()
     {
         die("cannot get data");
     }
-    echo "<table > ";
+    echo "<table> ";
     echo "<tr>";
     echo "<td> # </td>";
     echo "<td> name </td>";
     echo "<td> email</td>";
     echo "<td> gender </td>";
     echo "<td> mail status </td>";
-    echo "<td> action </td>";
+    echo "<td colspan = 3> action </td>";
     echo "</tr>";
     if (mysqli_num_rows($result) > 0)
     {
         while ($row = mysqli_fetch_assoc($result))
         {
             $id = $row['id'];
+            $d = "delete";
+            $u = "update";
+            $r = "retrieve";
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row["name"]  . "</td>";
             echo "<td>" . $row["email"]  . "</td>";
             echo "<td>" . $row["gender"]  . "</td>";
             echo "<td>" . ($row['mail_status'] ? "yes" : "no") . "</td>";
-            echo "<td>
-            <button>
-            view
-            </button>
-            <button>
-            edit
-            </buton>
-            <button>
-            delete
-            </buton>
-            </td>
-            ";
+            echo "<td class = 'a1'> <a href = 'details.php?id=$id&&operation=$d'><img src = './img/delete.png' title = 'delete'></a></td>";
+            echo "<td class = 'a1'> <a href = 'update.php?id=$id&&operation=$u'> <img src = './img/pen.png'> </a> </td>";
+            echo "<td class = 'a1'> <a href = 'view.php?id=$id&&operation=$r'><img src = './img/view.png'> </a></td>";
             echo "</tr>";
         }
     }
@@ -91,7 +85,19 @@ function retrieve_users()
 }
 function update_user($id, $new_name, $new_email, $new_gender, $new_state)
 {
-    //todo
+    $dbhost = 'localhost';
+    $dbuser = 'root';
+    $dbpass = 'root';
+    $dbname = 'users';
+    $port = 3307;
+    $t = true;
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname, $port);
+    $query = "update users set name = '$new_name' , email = '$new_email'
+    , gender = '$new_gender' ,  mail_status = $new_state where id = $id";
+    $result = mysqli_query($conn, $query);
+    mysqli_close($conn);
+    echo "<script> alert('user updated succesfully'); </script>";
+
 }
 function delete_user($id)
 {
@@ -105,10 +111,25 @@ function delete_user($id)
     $query = "Delete from users where id = $id";
     $result = mysqli_query($conn, $query);
     mysqli_close($conn);
-    //todo : call this function with buttons
 }
-function view_user($id)
+function retrieve_userinfo($id)
 {
-    //todo
+    
+    $dbhost = 'localhost';
+    $dbuser = 'root';
+    $dbpass = 'root';
+    $dbname = 'users';
+    $port = 3307;
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname, $port);
+    $query = "select * from users where id = $id;";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) > 0)
+    {
+        $result = mysqli_fetch_assoc($result);
+        mysqli_close($conn);
+        return $result;
+    }
+    mysqli_close($conn);
+    return null;
 }
 ?>

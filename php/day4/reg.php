@@ -1,5 +1,16 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+                
+                body {
+                    background-color : <?php
+                    //choose a random color based on time 
+                    $colors = ['red', 'blue', 'green', 'yellow', 'cyan'];
+                    echo $colors[time() % count($colors)];
+                    ?>
+                }
+            </style>
+    </head>
     <body>
         <h1>
             <b>
