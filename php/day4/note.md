@@ -1,4 +1,4 @@
 # this is lab4 php task after doing you can watch the video of run 
-[here](https://youtu.be/bbQPamg0BaQ)
+[here](https://youtu.be/bbQPamg0BaQ) or by downloading the video from the repo
 ## also a side note i made pages colors keep changing with each refresh via php 
-the idea is define a set of colors then choosing between them as time change
+## the idea is define a set of colors then choosing between them as time change
