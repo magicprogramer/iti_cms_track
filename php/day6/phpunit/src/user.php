@@ -1,12 +1,9 @@
 <?php
 class User {
 
-    public $name = "anything";
-
-    public $email = "anything@gmail.com";
-
+    public $name;
+    public $email;
     function __construct($name, $email)
-
     {
 
         $this->name = $name;

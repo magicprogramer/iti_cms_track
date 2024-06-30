@@ -1,5 +1,4 @@
 <?php
-require (__DIR__.'/../src/factorial.php');
 class factorial 
 { 
     public function fact($n) 

@@ -1,1 +1,1 @@
-{"version":1,"defects":{"factorialTest::testFactorial":7,"UserTest::testUser":5},"times":{"factorialTest::testFactorial":0.026,"UserTest::testUser":0.002}}
+{"version":1,"defects":{"factorialTest::testFactorial":7,"UserTest::testUser":5},"times":{"factorialTest::testFactorial":0.065,"UserTest::testUser":0.005}}

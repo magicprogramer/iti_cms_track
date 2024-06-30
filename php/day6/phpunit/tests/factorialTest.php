@@ -18,7 +18,7 @@ class factorialTest extends TestCase
             "abc" => null,
             -3 => null,
             false => null,
-            "1.5" => null
+           "1.5" => null
         ];
 
         foreach ($testCases as $input => $expected) {
