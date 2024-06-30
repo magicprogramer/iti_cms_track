@@ -1,5 +1,5 @@
 <?php
-require 'H:/xamp/htdocs/cms/iti_cms_track/php/day6/phpunit/src/user.php';
+require (__DIR__.'/../src/user.php');
 
 use PHPUnit\Framework\TestCase;
 
